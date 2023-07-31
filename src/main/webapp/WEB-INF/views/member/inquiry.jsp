@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -5,8 +7,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>오늘 뭐 먹지?</title>
-        <link rel="stylesheet" href="./resources/CSS/index.css">
-        <link rel="stylesheet" href="./resources/CSS/reset.css">
+        <link rel="stylesheet" href="../resources/CSS/index.css">
+        <link rel="stylesheet" href="../resources/CSS/inquiry.css">
+        <link rel="stylesheet" href="../resources/CSS/reset.css">
+
         
     </head>
     <body>
@@ -24,15 +28,10 @@
                     <!-- 네비게이션 -->
                     <nav>
                         <ul>
-                            <!-- 메뉴표 -->
                             <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/manu.html">메뉴표</a></li>
-                            <!-- 서비스 지역 -->
                             <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/service_area.html">서비스 지역</a></li>
-                            <!-- 이벤트 -->
                             <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/event.html">이벤트</a></li>
-                            <!-- 문의하기 -->
                             <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/inquiry.html">문의하기</a></li>
-                            <!-- 마이페이지 -->
                             <li><a class="manu" href="#">마이페이지</a></li>
                         </ul>
                     </nav>
@@ -43,50 +42,68 @@
                 <!-- 채팅 문의 -->
                 <div class="aside">
                     <div id="chat">
-                        <a href="#"><img class="img" src="./resources/images/chat.png" alt="문의"></a>
+                        <a href="#"><img class="img" src="../resources/images/chat.png" alt="문의"></a>
                     </div>
                 </div>
             </header>
 
             <main>
-                <!-- 롤링 배너 -->
-                <div id="main-banner">
-                    <div id="banner">
-                        <a href="#"><img id src="./resources/images/banner1.png" alt="배너1" width="1903px"></a>
+                <div id="inquiry">
+                    <!-- 문의 목록 -->
+                    <div id="list"><span>문의 목록</span></div>
+                    <!-- 문의 등록하기 -->
+                    <div><input id="submit" type="submit" value="1:1문의 등록하기"></div>
+                    <hr>
+                    <div>
+                        <table>
+                            <tr>
+                                <th class="list-layer">번호</th>
+                                <th class="list-layer">문의 날짜</th>
+                                <th class="list-layer">제목</th>
+                                <th class="list-layer">답변 여부</th>
+                            </tr>
+                            <tr>
+                                <td class="number">10</td>
+                                <td class="date">2023-05-30</td>
+                                <td class="title"><a href="#">안녕하세요</a></td>
+                                <td class="answer">미답변</td>
+                            </tr>
+                            <tr>
+                                <td class="number">9</td>
+                                <td class="date">2023-05-21</td>
+                                <td class="title"><a href="#">이벤트 안하시나요</a></td>
+                                <td class="answer">답변 완료</td>
+                            </tr>
+                            <tr>
+                                <td class="number">8</td>
+                                <td class="date">2023-05-20</td>
+                                <td class="title"><a href="#">저희 회사로 배달이 될까요?</a></td>
+                                <td class="answer">답변 완료</td>
+                            </tr>
+                            <tr>
+                                <td class="number">7</td>
+                                <td class="date">2023-05-15</td>
+                                <td class="title"><a href="#">어떻게 해야하나요</a></td>
+                                <td class="answer">답변 완료</td>
+                            </tr>
+                            <tr>
+                                <td class="number">6</td>
+                                <td class="date">2023-05-07</td>
+                                <td class="title"><a href="#">메뉴 변경하고싶어요</a></td>
+                                <td class="answer">답변 완료</td>
+                            </tr>
+                            <tr>
+                                <td class="number">5</td>
+                                <td class="date">2023-05-01</td>
+                                <td class="title"><a href="#">주문 취소해주세요</a></td>
+                                <td class="answer">답변 완료</td>
+                            </tr>
+                        </table>
                     </div>
+                    <!-- 목록 페이지 -->
+                    <a href="#"><div id="list-footer1"> 1 </div></a>
+                    <a href="#"><div id="list-footer2"> 2 </div></a>
                 </div>
-                <div id="banner-right" >
-                    <a href="#"><img class="banner-icon" src="./resources/images/right.png" alt="배너 오른쪽 화살표"></a>
-                </div>
-                <div id="banner-left" >
-                    <a href="#"><img class="banner-icon" src="./resources/images/left.png" alt="배너 오른쪽 화살표"></a>
-                </div>
-                <div id="main-why">
-                    <!--- 홍보 문구 --->
-                    <div class="why-layer1">
-                        <h1 class="main-text1">나가긴 귀찮고 가격은 비싸서</h1>
-                        <h1 class="main-text1">.</h1>
-                        <h1 class="main-text1">.</h1>
-                        <h1 class="main-text1">.</h1>
-                        <h1 class="main-text1">오늘 <span id="main-text-what">뭐</span> 먹지?</h1>
-                    </div>
-                    <div class="why-layer2">
-                        <p class="main-text2">매일 점심을 고민하는 직장인을 위해서!</p>
-                        <p class="main-text2">직장인의 최대 고민을</p>
-                        <p class="main-text2">해결해 드려요!</p>
-                    </div>
-                </div>
-                <div id="main-shipping">
-                    <img id="shipping-photo" src="./resources/images/free.png" alt="배달" width="600px">
-                    <div id="sipping-text">
-                        <p class="sipping-text-layer1">1인분도</p>
-                        <p class="sipping-text-layer1">무료배달</p>
-                    </div>
-                </div>
-                <!-- 리뷰 이벤트 -->
-                <section id="review">
-                    <img id="review-back" src="./resources/images/review_banner.png" alt="리뷰배경">
-                </section>
             </main>
 
             <footer>

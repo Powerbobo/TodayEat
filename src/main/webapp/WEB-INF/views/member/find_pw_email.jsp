@@ -1,14 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>오늘 뭐 먹지?</title>
+        <title>login</title>
         <link rel="stylesheet" href="../resources/CSS/index.css">
-        <link rel="stylesheet" href="../resources/CSS/service_area.css">
         <link rel="stylesheet" href="../resources/CSS/reset.css">
-        
+        <link rel="stylesheet" href="../resources/CSS/fine_pw_email.css">
     </head>
     <body>
         <div id="container">
@@ -26,15 +27,15 @@
                     <nav>
                         <ul>
                             <!-- 메뉴표 -->
-                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/manu.html">메뉴표</a></li>
+                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/manu.html">메뉴표</a> </li>
                             <!-- 서비스 지역 -->
-                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/service_area.html">서비스 지역</a></li>
+                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/service_area.html">서비스 지역</a> </li>
                             <!-- 이벤트 -->
-                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/event.html">이벤트</a></li>
+                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/event.html">이벤트</a> </li>
                             <!-- 문의하기 -->
-                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/inquiry.html">문의하기</a></li>
+                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/inquiry.html">문의하기</a> </li>
                             <!-- 마이페이지 -->
-                            <li><a class="manu" href="#">마이페이지</a></li>
+                            <li><a class="manu" href="#">마이페이지</a> </li>
                         </ul>
                     </nav>
                     <!-- 로그인/회원가입 -->
@@ -50,26 +51,35 @@
             </header>
 
             <main>
-                <div id="service"><span>서비스 가능 지역</span></div>
-                <div>
-                    <div id="service-layer">
-                        <div id="service-area">
-                            <h3>배송지역</h3>
-                            <p>성북구 종로구 동대문구 중랑구 광진구 성동구 용산구 중구 서대문구 마포구 
-                                강서구 양천구 구로구 영등포구 동작구 관악구 금천구 서초구 강남구 송파구 강동구
-                            </p>
-                            <div id="un-service-area1">
-                                <h3>배송 불가 지역</h3>
-                                <p>은평구 강북구 도봉구 노원구
-                                </p>
-                            </div>
-                            <div id="un-service-area2">
-                                <h3>배송 불가 구역</h3>
-                                <p>서울 내 대학교</p>
-                            </div>
-                        </div>
+                <!-- 비밀번호 찾기 -->
+            <div class="findPw">
+                <h2>비밀번호 찾기</h2>
+                <div id="choiceWay">
+                    <!-- 휴대폰 인증 -->
+                    <div id="phoneCer">
+                        <a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/find_pw_phone.html"><h3>휴대폰 인증</h3></a>
                     </div>
+                    <!-- 이메일 인증 -->
+                    <div id="emailCer">
+                        <a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/find_pw_email.html"><h3>이메일 인증</h3></a>
+                    </div>
+                    <hr>
                 </div>
+                <!-- 이름 -->
+                <div id="userName">
+                    <h3>이름</h3>
+                    <input type="text" name="name" id="userName" placeholder="이름을 입력해주세요">
+                </div>
+                <!-- 이메일 -->
+                <div id="usernumber">
+                    <h3>이메일</h3>
+                    <input type="text" name="name" id="userName" placeholder="이메일을 입력해주세요">
+                </div>
+                <!-- 인증번호 받기 -->
+                <div class="number">
+                    <input id="number" type="submit" value="인증번호 받기">
+                </div>
+            </div>
             </main>
 
             <footer>

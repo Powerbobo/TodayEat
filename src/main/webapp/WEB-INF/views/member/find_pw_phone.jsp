@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -7,8 +9,7 @@
         <title>login</title>
         <link rel="stylesheet" href="../resources/CSS/index.css">
         <link rel="stylesheet" href="../resources/CSS/reset.css">
-        <link rel="stylesheet" href="../resources/CSS/login.css">
-        <link rel="stylesheet" href="../resources/CSS/join.css">
+        <link rel="stylesheet" href="../resources/CSS/find_pw_phone.css">
     </head>
     <body>
         <div id="container">
@@ -50,64 +51,35 @@
             </header>
 
             <main>
-                <!-- 회원가입 -->
-                <div class="join">
-                    <h2>회원가입</h2>
-                    <hr>
-                    <!-- 아이디 입력 -->
-                    <div class="join-info" id="join-id">
-                        <span>아이디 </span>
-                        <input class="joinInfo" type="text" name="" id="joinId" placeholder="아이디를 입력하세요.">
+                <!-- 비밀번호 찾기 -->
+            <div class="findPw">
+                <h2>비밀번호 찾기</h2>
+                <div id="choiceWay">
+                    <!-- 휴대폰 인증 -->
+                    <div id="phoneCer">
+                        <a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/find_pw_phone.html"><h3>휴대폰 인증</h3></a>
                     </div>
-                    <!-- 비밀번호 입력 -->
-                    <div class="join-info" id="join-pw">
-                        <span>비밀번호 </span>
-                        <input class="joinInfo" type="text" name="" id="joinPW" placeholder="비밀번호를 입력하세요.">
-                    </div>
-                    <!-- 비밀번호 재입력 -->
-                    <div class="join-info" id="join-pwRe">
-                        <span>비밀번호확인 </span>
-                        <input class="joinInfo" type="text" name="" id="joinPwRe" placeholder="비밀번호를 한번 더 입력하세요.">
-                    </div>
-                    <!-- 이름 입력 -->
-                    <div class="join-info" id="join-name">
-                        <span>이름 </span>
-                        <input class="joinInfo" type="text" name="" id="joinName" placeholder="이름을 입력하세요.">
-                    </div>
-                    <!-- 전화번호 입력 -->
-                    <div class="join-info" id="join-phone">
-                        <span>휴대폰 </span>
-                        <input class="joinInfo" ype="text" name="" id="joinPhone" placeholder="전화번호를 입력하세요.">
-                    </div>
-                    <!-- 이메일 입력 -->
-                    <div class="join-info" id="join-email">
-                        <span>이메일 </span>
-                        <input class="joinInfo" type="text" name="" id="joinEmail" placeholder="이메일을 입력하세요.">
-                    </div>
-                    <!-- 주소 입력 -->
-                    <div class="join-info" id="join-addr">
-                        <span>주소 </span>
-                        <input class="joinInfo" type="text" name="" id="joinAddr" placeholder="주소를 입력하세요.">
-                    </div>
-                    <!-- 성별 선택 -->
-                    <div class="join-info" id="join-gen">
-                        <span>성별 </span>
-                        <input type="radio" name="gender" id="genMen"> 
-                        <label for="genMen">남자</label>
-                        <input type="radio" name="gender" id="genWom"> 
-                        <label for="genWom">여자</label>
-                    </div>
-                    <!-- 생년월일 입력 -->
-                    <div class="join-info" id="join-bir">
-                        <span>생일 </span>
-                        <input class="joinInfo" type="date" name="" id="joinBir">
+                    <!-- 이메일 인증 -->
+                    <div id="emailCer">
+                        <a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/find_pw_email.html"><h3>이메일 인증</h3></a>
                     </div>
                     <hr>
-                    <!-- 가입완료 버튼 -->
-                    <div class="join-info" id="join-end">
-                        <input type="submit" value="가입하기">
-                    </div>
                 </div>
+                <!-- 이름 -->
+                <div id="userName">
+                    <h3>이름</h3>
+                    <input type="text" name="name" id="userName" placeholder="이름을 입력해주세요">
+                </div>
+                <!-- 휴대폰 인증 -->
+                <div id="usernumber">
+                    <h3>휴대폰 번호</h3>
+                    <input type="text" name="name" id="userName" placeholder="이메일을 입력해주세요">
+                </div>
+                <!-- 인증번호 받기 -->
+                <div class="number">
+                    <input id="number" type="submit" value="인증번호 보내기">
+                </div>
+            </div>
             </main>
 
             <footer>

@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -7,7 +9,7 @@
         <title>login</title>
         <link rel="stylesheet" href="../resources/CSS/index.css">
         <link rel="stylesheet" href="../resources/CSS/reset.css">
-        <link rel="stylesheet" href="../resources/CSS/fine_pw_email.css">
+        <link rel="stylesheet" href="../resources/CSS/login.css">
     </head>
     <body>
         <div id="container">
@@ -49,35 +51,31 @@
             </header>
 
             <main>
-                <!-- 비밀번호 찾기 -->
-            <div class="findPw">
-                <h2>비밀번호 찾기</h2>
-                <div id="choiceWay">
-                    <!-- 휴대폰 인증 -->
-                    <div id="phoneCer">
-                        <a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/find_pw_phone.html"><h3>휴대폰 인증</h3></a>
-                    </div>
-                    <!-- 이메일 인증 -->
-                    <div id="emailCer">
-                        <a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/find_pw_email.html"><h3>이메일 인증</h3></a>
-                    </div>
-                    <hr>
-                </div>
-                <!-- 이름 -->
-                <div id="userName">
-                    <h3>이름</h3>
-                    <input type="text" name="name" id="userName" placeholder="이름을 입력해주세요">
-                </div>
-                <!-- 이메일 -->
-                <div id="usernumber">
-                    <h3>이메일</h3>
-                    <input type="text" name="name" id="userName" placeholder="이메일을 입력해주세요">
-                </div>
-                <!-- 인증번호 받기 -->
-                <div class="number">
-                    <input id="number" type="submit" value="인증번호 받기">
-                </div>
-            </div>
+	            <form action="/member/login.do" method="post">
+	                <div class="login-wrapper">
+	                    <!-- 로그인 문구 -->
+	                    <h2>로그인</h2>
+	                    <form action="" method="post" id="login-form">
+	                        <!-- 아이디/비밀번호 입력창 -->
+	                        <input type="text" name="userName" id="user-id" placeholder="아이디를 입력해주세요">
+	                        <input type="password" name="userPassword" id="user-pw" placeholder="비밀번호를 입력해주세요">
+	                        <!-- 자동 로그인 -->
+	                        <label for="remember-check">
+	                            <input type="checkbox" id="remember-check"><span>아이디 저장하기</span>
+	                        </label>
+	                        <!-- 아이디찾기 / 비밀번호 찾기 -->
+	                        <p id="find"><a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/find_id_phone.html">아이디찾기</a>|<a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/find_pw_phone.html">비밀번호 찾기</a></p>
+	                        <!-- 로그인 버튼 -->
+	                        <input type="submit" value="로그인">
+	                    </form>
+	                    <hr>
+	                    <div id="sns-login">
+	                        <input id="goole-login" type="submit" value="Google 로그인"><br>
+	                        <input id="naver-login" type="submit" value="Naver 로그인"><br>
+	                        <input id="kakao-login" type="submit" value="Kakao 로그인">
+	                    </div>
+	                </div>
+	            </form>
             </main>
 
             <footer>

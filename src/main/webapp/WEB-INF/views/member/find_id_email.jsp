@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -7,7 +9,8 @@
         <title>login</title>
         <link rel="stylesheet" href="../resources/CSS/index.css">
         <link rel="stylesheet" href="../resources/CSS/reset.css">
-        <link rel="stylesheet" href="../resources/CSS/find_pw_phone.css">
+        <link rel="stylesheet" href="../resources/CSS/find_id_email.css">
+        <link rel="stylesheet" href="../resources/CSS/find_id_phone.css">
     </head>
     <body>
         <div id="container">
@@ -49,35 +52,35 @@
             </header>
 
             <main>
-                <!-- 비밀번호 찾기 -->
-            <div class="findPw">
-                <h2>비밀번호 찾기</h2>
-                <div id="choiceWay">
-                    <!-- 휴대폰 인증 -->
-                    <div id="phoneCer">
-                        <a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/find_pw_phone.html"><h3>휴대폰 인증</h3></a>
+                <!-- 아이디 찾기 -->
+                <div class="findId">
+                    <h2>아이디 찾기</h2>
+                    <div id="choiceWay">
+                        <!-- 휴대폰 인증 -->
+                        <div id="phoneCer">
+                            <a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/find_id_phone.html"><h3>휴대폰 인증</h3></a>
+                        </div>
+                        <!-- 이메일 인증 -->
+                        <div id="emailCer">
+                            <a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/find_id_email.html"><h3>이메일 인증</h3></a>
+                        </div>
+                        <hr>
                     </div>
-                    <!-- 이메일 인증 -->
-                    <div id="emailCer">
-                        <a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/find_pw_email.html"><h3>이메일 인증</h3></a>
+                    <!-- 이름 -->
+                    <div id="userName">
+                        <h3>이름</h3>
+                        <input type="text" name="name" id="userName" placeholder="이름을 입력해주세요">
                     </div>
-                    <hr>
+                    <!-- 이메일 -->
+                    <div id="usernumber">
+                        <h3>이메일</h3>
+                        <input type="text" name="name" id="userName" placeholder="이메일을 입력해주세요">
+                    </div>
+                    <!-- 인증번호 받기 -->
+                    <div class="number">
+                        <input id="number" type="submit" value="인증번호 보내기">
+                    </div>
                 </div>
-                <!-- 이름 -->
-                <div id="userName">
-                    <h3>이름</h3>
-                    <input type="text" name="name" id="userName" placeholder="이름을 입력해주세요">
-                </div>
-                <!-- 휴대폰 인증 -->
-                <div id="usernumber">
-                    <h3>휴대폰 번호</h3>
-                    <input type="text" name="name" id="userName" placeholder="이메일을 입력해주세요">
-                </div>
-                <!-- 인증번호 받기 -->
-                <div class="number">
-                    <input id="number" type="submit" value="인증번호 보내기">
-                </div>
-            </div>
             </main>
 
             <footer>

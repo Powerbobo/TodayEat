@@ -1,13 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>login</title>
+        <title>오늘 뭐 먹지?</title>
         <link rel="stylesheet" href="../resources/CSS/index.css">
+        <link rel="stylesheet" href="../resources/CSS/event.css">
         <link rel="stylesheet" href="../resources/CSS/reset.css">
-        <link rel="stylesheet" href="../resources/CSS/login.css">
+        
     </head>
     <body>
         <div id="container">
@@ -25,15 +28,15 @@
                     <nav>
                         <ul>
                             <!-- 메뉴표 -->
-                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/manu.html">메뉴표</a> </li>
+                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/manu.html">메뉴표</a></li>
                             <!-- 서비스 지역 -->
-                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/service_area.html">서비스 지역</a> </li>
+                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/service_area.html">서비스 지역</a></li>
                             <!-- 이벤트 -->
-                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/event.html">이벤트</a> </li>
+                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/event.html">이벤트</a></li>
                             <!-- 문의하기 -->
-                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/inquiry.html">문의하기</a> </li>
+                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/inquiry.html">문의하기</a></li>
                             <!-- 마이페이지 -->
-                            <li><a class="manu" href="#">마이페이지</a> </li>
+                            <li><a class="manu" href="#">마이페이지</a></li>
                         </ul>
                     </nav>
                     <!-- 로그인/회원가입 -->
@@ -49,29 +52,18 @@
             </header>
 
             <main>
-                <div class="login-wrapper">
-                    <!-- 로그인 문구 -->
-                    <h2>로그인</h2>
-                    <form action="" method="post" id="login-form">
-                        <!-- 아이디/비밀번호 입력창 -->
-                        <input type="text" name="userName" id="user-id" placeholder="아이디를 입력해주세요">
-                        <input type="password" name="userPassword" id="user-pw" placeholder="비밀번호를 입력해주세요">
-                        <!-- 자동 로그인 -->
-                        <label for="remember-check">
-                            <input type="checkbox" id="remember-check"><span>아이디 저장하기</span>
-                        </label>
-                        <!-- 아이디찾기 / 비밀번호 찾기 -->
-                        <p id="find"><a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/find_id_phone.html">아이디찾기</a>|<a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/find_pw_phone.html">비밀번호 찾기</a></p>
-                        <!-- 로그인 버튼 -->
-                        <input type="submit" value="로그인">
-                    </form>
-                    <hr>
-                    <div id="sns-login">
-                        <input id="goole-login" type="submit" value="Google 로그인"><br>
-                        <input id="naver-login" type="submit" value="Naver 로그인"><br>
-                        <input id="kakao-login" type="submit" value="Kakao 로그인">
-                    </div>
-                </div>
+                <!-- 진행중인 이벤트 -->
+            <div id="event"><span>진행중인 event</span></div>
+            <div class="event-layer">
+                <!-- 첫 번째 이벤트 -->
+                <div id="event1"><span>● event1 (6/19~6/25)</span></div>
+                <div><a href="#"><img id="event1-summer" src="../resources/images/banner1.png" alt="삼계탕"></a></div>
+            </div>
+            <div class="event-layer">
+                <!-- 두 번째 이벤트 -->
+                <div id="event2"><span>● event2 (6/1~6/30)</span></div>
+                <div><a href="#"><img id="event2-review" src="../resources/images/review_banner.png" alt="리뷰"></a></div>
+            </div>
             </main>
 
             <footer>

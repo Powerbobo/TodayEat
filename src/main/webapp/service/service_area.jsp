@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -6,9 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>오늘 뭐 먹지?</title>
         <link rel="stylesheet" href="../resources/CSS/index.css">
-        <link rel="stylesheet" href="../resources/CSS/inquiry.css">
+        <link rel="stylesheet" href="../resources/CSS/service_area.css">
         <link rel="stylesheet" href="../resources/CSS/reset.css">
-
         
     </head>
     <body>
@@ -26,10 +27,15 @@
                     <!-- 네비게이션 -->
                     <nav>
                         <ul>
+                            <!-- 메뉴표 -->
                             <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/manu.html">메뉴표</a></li>
+                            <!-- 서비스 지역 -->
                             <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/service_area.html">서비스 지역</a></li>
+                            <!-- 이벤트 -->
                             <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/event.html">이벤트</a></li>
+                            <!-- 문의하기 -->
                             <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/inquiry.html">문의하기</a></li>
+                            <!-- 마이페이지 -->
                             <li><a class="manu" href="#">마이페이지</a></li>
                         </ul>
                     </nav>
@@ -46,61 +52,25 @@
             </header>
 
             <main>
-                <div id="inquiry">
-                    <!-- 문의 목록 -->
-                    <div id="list"><span>문의 목록</span></div>
-                    <!-- 문의 등록하기 -->
-                    <div><input id="submit" type="submit" value="1:1문의 등록하기"></div>
-                    <hr>
-                    <div>
-                        <table>
-                            <tr>
-                                <th class="list-layer">번호</th>
-                                <th class="list-layer">문의 날짜</th>
-                                <th class="list-layer">제목</th>
-                                <th class="list-layer">답변 여부</th>
-                            </tr>
-                            <tr>
-                                <td class="number">10</td>
-                                <td class="date">2023-05-30</td>
-                                <td class="title"><a href="#">안녕하세요</a></td>
-                                <td class="answer">미답변</td>
-                            </tr>
-                            <tr>
-                                <td class="number">9</td>
-                                <td class="date">2023-05-21</td>
-                                <td class="title"><a href="#">이벤트 안하시나요</a></td>
-                                <td class="answer">답변 완료</td>
-                            </tr>
-                            <tr>
-                                <td class="number">8</td>
-                                <td class="date">2023-05-20</td>
-                                <td class="title"><a href="#">저희 회사로 배달이 될까요?</a></td>
-                                <td class="answer">답변 완료</td>
-                            </tr>
-                            <tr>
-                                <td class="number">7</td>
-                                <td class="date">2023-05-15</td>
-                                <td class="title"><a href="#">어떻게 해야하나요</a></td>
-                                <td class="answer">답변 완료</td>
-                            </tr>
-                            <tr>
-                                <td class="number">6</td>
-                                <td class="date">2023-05-07</td>
-                                <td class="title"><a href="#">메뉴 변경하고싶어요</a></td>
-                                <td class="answer">답변 완료</td>
-                            </tr>
-                            <tr>
-                                <td class="number">5</td>
-                                <td class="date">2023-05-01</td>
-                                <td class="title"><a href="#">주문 취소해주세요</a></td>
-                                <td class="answer">답변 완료</td>
-                            </tr>
-                        </table>
+                <div id="service"><span>서비스 가능 지역</span></div>
+                <div>
+                    <div id="service-layer">
+                        <div id="service-area">
+                            <h3>배송지역</h3>
+                            <p>성북구 종로구 동대문구 중랑구 광진구 성동구 용산구 중구 서대문구 마포구 
+                                강서구 양천구 구로구 영등포구 동작구 관악구 금천구 서초구 강남구 송파구 강동구
+                            </p>
+                            <div id="un-service-area1">
+                                <h3>배송 불가 지역</h3>
+                                <p>은평구 강북구 도봉구 노원구
+                                </p>
+                            </div>
+                            <div id="un-service-area2">
+                                <h3>배송 불가 구역</h3>
+                                <p>서울 내 대학교</p>
+                            </div>
+                        </div>
                     </div>
-                    <!-- 목록 페이지 -->
-                    <a href="#"><div id="list-footer1"> 1 </div></a>
-                    <a href="#"><div id="list-footer2"> 2 </div></a>
                 </div>
             </main>
 

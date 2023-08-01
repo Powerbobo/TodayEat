@@ -3,6 +3,8 @@ package todayeat.controller;
 import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Formatter;
 
 import javax.servlet.ServletException;
@@ -33,8 +35,7 @@ public class JoinController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getRequestDispatcher("/WEB-INF/views/member/join.jsp").forward(request, response);
 	}
 
 	/**
@@ -51,18 +52,27 @@ public class JoinController extends HttpServlet {
 		String memberEmail = request.getParameter("joinEmail");
 		String memberAddress = request.getParameter("joinAddr");
 		String memberGender = request.getParameter("gender");
-		Date memberBirthday =  Date.valueOf(request.getParameter("joinBir"));
+		String mBirthDay = request.getParameter("joinBir");
+		// SimpleDateFormat
+//		Date memberBirthday =  Date.valueOf(request.getParameter("joinBir"));
+		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDate date = LocalDate.parse(mBirthDay, format);
+		Date memberBirthday = Date.valueOf(date);
 		
 		Member member = new Member(memberId, memberPw, memberPwRe, memberName, memberPhone, memberEmail, memberAddress, memberGender, memberBirthday);
 		MemberService service = new MemberService();
 		int result = service.insertMember(member);
 		if(result > 0) {
 			// 성공 -> 로그인 화면으로 이동
-			request.getRequestDispatcher("/WEB-INF/views/member/join.jsp")
-			.forward(request, response);
+			request.setAttribute("msg", "회원가입 성공!");
+			request.setAttribute("url", "/index.jsp");
+			request.getRequestDispatcher("/WEB-INF/views/member/serviceSuccess.jsp").forward(request, response);
 		} else {
 			// 실패 -> 실패 alert 창 띄우기
-//			response.send
+			request.setAttribute("msg", "회원가입 실패!");
+			request.setAttribute("url", "/member/join.do");
+			request.getRequestDispatcher("/WEB-INF/views/member/serviceFailed.jsp")
+			.forward(request, response);
 		}
 	}
 

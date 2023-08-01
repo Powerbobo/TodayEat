@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>login</title>
+        <title>join</title>
         <link rel="stylesheet" href="/resources/css/index.css">
         <link rel="stylesheet" href="/resources/css/reset.css">
         <link rel="stylesheet" href="/resources/css/login.css">
@@ -22,31 +22,31 @@
                     </div>
                     <!-- 로고 -->
                     <div id="logo">
-                        <p class="header-logo"><a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/index.html">오늘<span id="logo-layer"> 뭐 </span>먹지?</a></p>
+                        <p class="header-logo"><a href="member/index.jsp">오늘<span id="logo-layer"> 뭐 </span>먹지?</a></p>
                     </div>
                     <!-- 네비게이션 -->
                     <nav>
                         <ul>
                             <!-- 메뉴표 -->
-                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/manu.html">메뉴표</a> </li>
+                            <li><a class="manu" href="/WEB-INF/views/service/menu.jsp">메뉴표</a></li>
                             <!-- 서비스 지역 -->
-                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/service_area.html">서비스 지역</a> </li>
+                            <li><a class="manu" href="/WEB-INF/views/service/service_area.jsp">서비스 지역</a></li>
                             <!-- 이벤트 -->
-                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/event.html">이벤트</a> </li>
+                            <li><a class="manu" href="/WEB-INF/views/service/event.jsp">이벤트</a> </li>
                             <!-- 문의하기 -->
-                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/inquiry.html">문의하기</a> </li>
+                            <li><a class="manu" href="/WEB-INF/views/service/member/inquiry">문의하기</a> </li>
                             <!-- 마이페이지 -->
                             <li><a class="manu" href="#">마이페이지</a> </li>
                         </ul>
                     </nav>
                     <!-- 로그인/회원가입 -->
                     <div id="login">
-                        <a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/login.html">로그인</a><pre id="Space"> | </pre><a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/join.html">회원가입</a></div>
+                        <a href="/member/login.do">로그인</a><pre id="Space"> | </pre><a href="/member/join.do"">회원가입</a></div>
                 </div>
                 <!-- 채팅 문의 -->
                 <div class="aside">
                     <div id="chat">
-                        <a href="#"><img class="img" src="../resources/images/chat.png" alt="문의"></a>
+                        <a href="#"><img class="img" src="/resources/images/chat.png" alt="문의"></a>
                     </div>
                 </div>
             </header>
@@ -60,37 +60,37 @@
 	                    <!-- 아이디 입력 -->
 	                    <div class="join-info" id="join-id">
 	                        <span>아이디 </span>
-	                        <input class="joinInfo" type="text" name="" id="joinId" placeholder="아이디를 입력하세요.">
+	                        <input class="joinInfo" type="text" name="joinId" id="joinId" placeholder="아이디를 입력하세요.">
 	                    </div>
 	                    <!-- 비밀번호 입력 -->
 	                    <div class="join-info" id="join-pw">
 	                        <span>비밀번호 </span>
-	                        <input class="joinInfo" type="password" name="" id="joinPw" placeholder="비밀번호를 입력하세요.">
+	                        <input class="joinInfo" type="password" name="joinPW" id="joinPw" placeholder="비밀번호를 입력하세요.">
 	                    </div>
 	                    <!-- 비밀번호 재입력 -->
 	                    <div class="join-info" id="join-pwRe">
 	                        <span>비밀번호확인 </span>
-	                        <input class="joinInfo" type="password" name="" id="joinPwRe" placeholder="비밀번호를 한번 더 입력하세요.">
+	                        <input class="joinInfo" type="password" name="joinPwRe" id="joinPwRe" placeholder="비밀번호를 한번 더 입력하세요.">
 	                    </div>
 	                    <!-- 이름 입력 -->
 	                    <div class="join-info" id="join-name">
 	                        <span>이름 </span>
-	                        <input class="joinInfo" type="text" name="" id="joinName" placeholder="이름을 입력하세요.">
+	                        <input class="joinInfo" type="text" name="joinName" id="joinName" placeholder="이름을 입력하세요.">
 	                    </div>
 	                    <!-- 전화번호 입력 -->
 	                    <div class="join-info" id="join-phone">
 	                        <span>휴대폰 </span>
-	                        <input class="joinInfo" ype="text" name="" id="joinPhone" placeholder="전화번호를 입력하세요.">
+	                        <input class="joinInfo" type="text" name="joinPhone" id="joinPhone" placeholder="전화번호를 입력하세요.">
 	                    </div>
 	                    <!-- 이메일 입력 -->
 	                    <div class="join-info" id="join-email">
 	                        <span>이메일 </span>
-	                        <input class="joinInfo" type="text" name="" id="joinEmail" placeholder="이메일을 입력하세요.">
+	                        <input class="joinInfo" type="text" name="joinEmail" id="joinEmail" placeholder="이메일을 입력하세요.">
 	                    </div>
 	                    <!-- 주소 입력 -->
 	                    <div class="join-info" id="join-addr">
 	                        <span>주소 </span>
-	                        <input class="joinInfo" type="text" name="" id="joinAddr" placeholder="주소를 입력하세요.">
+	                        <input class="joinInfo" type="text" name="joinAddr" id="joinAddr" placeholder="주소를 입력하세요.">
 	                    </div>
 	                    <!-- 성별 선택 -->
 	                    <div class="join-info" id="join-gen">
@@ -103,7 +103,7 @@
 	                    <!-- 생년월일 입력 -->
 	                    <div class="join-info" id="join-bir">
 	                        <span>생일 </span>
-	                        <input class="joinInfo" type="date" name="" id="joinBir">
+	                        <input class="joinInfo" type="date" name="joinBir" id="joinBir">
 	                    </div>
 	                    <hr>
 	                    <!-- 가입완료 버튼 -->

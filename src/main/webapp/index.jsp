@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -24,7 +25,7 @@
 					<!-- 로고 -->
 					<div id="logo">
 						<p class="header-logo">
-							<a href="http://127.0.0.1:9999/service/index.jsp">오늘<span id="logo-layer"> 뭐 </span>먹지? </a>
+							<a href="/index.jsp">오늘<span id="logo-layer"> 뭐 </span>먹지? </a>
 						</p>
 					</div>
 					<!-- 네비게이션 -->
@@ -32,19 +33,19 @@
 						<ul>
 							<!-- 메뉴표 -->
 							<li>
-								<a class="manu" href="http://127.0.0.1:9999/service/menu.jsp">메뉴표</a>
+								<a class="manu" href="/WEB-INF/views/service/menu.jsp">메뉴표</a>
 							</li>
 							<!-- 서비스 지역 -->
 							<li>
-								<a class="manu" href="http://127.0.0.1:9999/service/service_area.jsp">서비스 지역</a>
+								<a class="manu" href="/WEB-INF/views/service/service_area.jsp">서비스 지역</a>
 							</li>
 							<!-- 이벤트 -->
 							<li>
-								<a class="manu" href="http://127.0.0.1:9999/service/event.jsp">이벤트</a>
+								<a class="manu" href="/WEB-INF/views/service/event.jsp">이벤트</a>
 							</li>
 							<!-- 문의하기 -->
 							<li>
-								<a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/inquiry.html">문의하기</a>
+								<a class="manu" href="/WEB-INF/views/member/inquiry">문의하기</a>
 							</li>
 							<!-- 마이페이지 -->
 							<li>
@@ -54,9 +55,16 @@
 					</nav>
 					<!-- 로그인/회원가입 -->
 					<div id="login">
-						<a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/login.html">로그인</a>
+					<c:if test="${ memberId eq null }">
+						<a href="/member/login.do">로그인</a>
 						<pre id="Space"> | </pre>
-						<a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/join.html">회원가입</a>
+						<a href="/member/join.do"">회원가입</a>
+						</c:if>
+					<c:if test="${ memberId ne null }">
+						<a href="#">마이페이지</a>
+						<pre id="Space"> | </pre>
+						<a href="#">로그아웃</a>
+					</c:if>
 					</div>
 				</div>
 				<!-- 채팅 문의 -->
@@ -71,7 +79,7 @@
 				<!-- 롤링 배너 -->
 				<div id="main-banner">
 					<div id="banner">
-						<a href="#"><img src="./resources/images/banner1.png" alt="배너1" width="1903px"></a>
+						<a href="#"><img src="/resources/images/banner1.png" alt="배너1" width="1903px"></a>
 					</div>
 				</div>
 				<div id="banner-right">

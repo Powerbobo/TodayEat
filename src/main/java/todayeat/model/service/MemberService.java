@@ -1,6 +1,7 @@
 package todayeat.model.service;
 
 import java.sql.*;
+import java.util.List;
 
 import todayeat.common.JDBCTemplate;
 import todayeat.model.dao.MemberDAO;
@@ -22,4 +23,14 @@ public class MemberService {
 		}
 		return result;
 	}
+	// 로그인
+	public Member selectLongin(Member member) {
+		JDBCTemplate jdbcTemplate = JDBCTemplate.getInstance();
+		Connection conn = jdbcTemplate.createConnection();
+		MemberDAO mDao = new MemberDAO();
+		member = mDao.selectLongin(conn, member);
+		return member;
+	}
+	
+	
 }

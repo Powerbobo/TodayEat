@@ -7,10 +7,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>login</title>
-        <link rel="stylesheet" href="../resources/CSS/index.css">
-        <link rel="stylesheet" href="../resources/CSS/reset.css">
-        <link rel="stylesheet" href="../resources/CSS/find_id_email.css">
-        <link rel="stylesheet" href="../resources/CSS/find_id_phone.css">
+        <link rel="stylesheet" href="/resources/css/index.css">
+        <link rel="stylesheet" href="/resources/css/reset.css">
+        <link rel="stylesheet" href="/resources/css/find_id_email.css">
+        <link rel="stylesheet" href="/resources/css/find_id_phone.css">
     </head>
     <body>
         <div id="container">
@@ -22,65 +22,67 @@
                     </div>
                     <!-- 로고 -->
                     <div id="logo">
-                        <p class="header-logo"><a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/index.html">오늘<span id="logo-layer"> 뭐 </span>먹지?</a></p>
+                        <p class="header-logo"><a href="/index.jsp">오늘<span id="logo-layer"> 뭐 </span>먹지?</a></p>
                     </div>
                     <!-- 네비게이션 -->
                     <nav>
                         <ul>
                             <!-- 메뉴표 -->
-                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/manu.html">메뉴표</a> </li>
+                            <li><a class="manu" href="/WEB-INF/views/service/menu.jsp">메뉴표</a> </li>
                             <!-- 서비스 지역 -->
-                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/service_area.html">서비스 지역</a> </li>
+                            <li><a class="manu" href="/WEB-INF/views/service/service_area.jsp">서비스 지역</a> </li>
                             <!-- 이벤트 -->
-                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/survice/event.html">이벤트</a> </li>
+                            <li><a class="manu" href="/WEB-INF/views/service/event.jsp">이벤트</a> </li>
                             <!-- 문의하기 -->
-                            <li><a class="manu" href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/inquiry.html">문의하기</a> </li>
+                            <li><a class="manu" href="/WEB-INF/views/member/inquiry.jsp">문의하기</a> </li>
                             <!-- 마이페이지 -->
                             <li><a class="manu" href="#">마이페이지</a> </li>
                         </ul>
                     </nav>
                     <!-- 로그인/회원가입 -->
                     <div id="login">
-                        <a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/login.html">로그인</a><pre id="Space"> | </pre><a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/join.html">회원가입</a></div>
+                        <a href="/WEB-INF/views/member/login.jsp">로그인</a><pre id="Space"> | </pre><a href="/WEB-INF/views/member/join.jsp">회원가입</a></div>
                 </div>
                 <!-- 채팅 문의 -->
                 <div class="aside">
                     <div id="chat">
-                        <a href="#"><img class="img" src="../resources/images/chat.png" alt="문의"></a>
+                        <a href="#"><img class="img" src="/resources/images/chat.png" alt="문의"></a>
                     </div>
                 </div>
             </header>
 
             <main>
                 <!-- 아이디 찾기 -->
-                <div class="findId">
-                    <h2>아이디 찾기</h2>
-                    <div id="choiceWay">
-                        <!-- 휴대폰 인증 -->
-                        <div id="phoneCer">
-                            <a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/find_id_phone.html"><h3>휴대폰 인증</h3></a>
-                        </div>
-                        <!-- 이메일 인증 -->
-                        <div id="emailCer">
-                            <a href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80/member/find_id_email.html"><h3>이메일 인증</h3></a>
-                        </div>
-                        <hr>
-                    </div>
-                    <!-- 이름 -->
-                    <div id="userName">
-                        <h3>이름</h3>
-                        <input type="text" name="name" id="userName" placeholder="이름을 입력해주세요">
-                    </div>
-                    <!-- 이메일 -->
-                    <div id="usernumber">
-                        <h3>이메일</h3>
-                        <input type="text" name="name" id="userName" placeholder="이메일을 입력해주세요">
-                    </div>
-                    <!-- 인증번호 받기 -->
-                    <div class="number">
-                        <input id="number" type="submit" value="인증번호 보내기">
-                    </div>
-                </div>
+                <form action="/member/findId.do" method="post">
+	                <div class="findId">
+	                    <h2>아이디 찾기</h2>
+	                    <div id="choiceWay">
+	                        <!-- 휴대폰 인증 -->
+	                        <div id="phoneCer">
+	                            <a href="/WEB-INF/views/member/find_id_phone.jsp"><h3>휴대폰 인증</h3></a>
+	                        </div>
+	                        <!-- 이메일 인증 -->
+	                        <div id="emailCer">
+	                            <a href="/WEB-INF/views/member/find_id_email.jsp"><h3>이메일 인증</h3></a>
+	                        </div>
+	                        <hr>
+	                    </div>
+	                    <!-- 이름 -->
+	                    <div id="userName">
+	                        <h3>이름</h3>
+	                        <input type="text" name="userName" id="userName" placeholder="이름을 입력해주세요">
+	                    </div>
+	                    <!-- 이메일 -->
+	                    <div id="usernumber">
+	                        <h3>이메일</h3>
+	                        <input type="text" name="userEmail" id="userEmail" placeholder="이메일을 입력해주세요">
+	                    </div>
+	                    <!-- 인증번호 받기 -->
+	                    <div class="number">
+	                        <input id="number" type="submit" value="인증번호 보내기">
+	                    </div>
+	                </div>
+                </form>
             </main>
 
             <footer>

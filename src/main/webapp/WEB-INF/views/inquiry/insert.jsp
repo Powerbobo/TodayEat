@@ -9,6 +9,7 @@
 	<body>
 		<h1>문의하기 작성</h1>
 		<form action="/inquiry/insert.do" method="post">
+			<input type="hidden" name="inquiryWriter" value="${user-Id }">
 			<ul>
 				<li>
 					<label>제목</label>

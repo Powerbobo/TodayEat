@@ -66,12 +66,12 @@ public class JoinController extends HttpServlet {
 			// 성공 -> 로그인 화면으로 이동
 			request.setAttribute("msg", "회원가입 성공!");
 			request.setAttribute("url", "/index.jsp");
-			request.getRequestDispatcher("/WEB-INF/views/member/serviceSuccess.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceSuccess.jsp").forward(request, response);
 		} else {
 			// 실패 -> 실패 alert 창 띄우기
 			request.setAttribute("msg", "회원가입 실패!");
 			request.setAttribute("url", "/member/join.do");
-			request.getRequestDispatcher("/WEB-INF/views/member/serviceFailed.jsp")
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp")
 			.forward(request, response);
 		}
 	}

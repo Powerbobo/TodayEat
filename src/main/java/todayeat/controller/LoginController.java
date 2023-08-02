@@ -49,14 +49,17 @@ public class LoginController extends HttpServlet {
 		Member mOne = service.selectLongin(member);
 		if(mOne != null) {
 			// 성공
+			HttpSession session = request.getSession();
+			session.setAttribute("user-id", member.getMemberId());
+			
 			request.setAttribute("msg", "로그인 성공!");
 			request.setAttribute("url", "/index.jsp");
-			request.getRequestDispatcher("/WEB-INF/views/member/serviceSuccess.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceSuccess.jsp").forward(request, response);
 		} else {
 			// 실패
 			request.setAttribute("msg", "로그인 실패!");
 			request.setAttribute("url", "/member/login.do");
-			request.getRequestDispatcher("/WEB-INF/views/member/serviceFailed.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp").forward(request, response);
 		}
 	}
 

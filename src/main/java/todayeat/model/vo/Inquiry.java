@@ -10,12 +10,25 @@ public class Inquiry {
 	private Date inquiryDate;
 	private String inquiryYN;
 	
+	
+	public Inquiry() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public Inquiry(String inquirySubject, String inquiryContent) {
 		super();
 		this.inquirySubject = inquirySubject;
 		this.inquiryContent = inquiryContent;
 	}
 	
+	public Inquiry(String inquirySubject, String inquiryContent, String inquiryWriter) {
+		super();
+		this.inquirySubject = inquirySubject;
+		this.inquiryContent = inquiryContent;
+		this.inquiryWriter = inquiryWriter;
+	}
+
 	public int getInquiryNo() {
 		return inquiryNo;
 	}

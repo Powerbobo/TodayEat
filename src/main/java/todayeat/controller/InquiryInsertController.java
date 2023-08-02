@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import todayeat.model.service.InquiryService;
 import todayeat.model.vo.Inquiry;
@@ -40,19 +41,19 @@ public class InquiryInsertController extends HttpServlet {
 		InquiryService service = new InquiryService();
 		String inquirySubject = request.getParameter("inquirySubject");
 		String inquiryContent = request.getParameter("inquiryContent");
-		String inquiryWriter = request.getParameter("inquiryContent");
-		Inquiry inquiry = new Inquiry(inquirySubject, inquiryContent);
+		String inquiryWriter = request.getParameter("inquiryWriter");
+		Inquiry inquiry = new Inquiry(inquirySubject, inquiryContent, inquiryWriter);
 		int result = service.insertInquiry(inquiry);
 		if(result > 0) {
 			// 성공하면 성공 팝업창 띄우고 목록으로 이동
 			request.setAttribute("msg", "문의 등록 성공!");
-			request.setAttribute("url", "/inquiry/list.jsp");
-			request.getRequestDispatcher("/WEB-INF/views/member/service/serviceSuccess.jsp").forward(request, response);
+			request.setAttribute("url", "/inquiry/list.do");
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceSuccess.jsp").forward(request, response);
 		} else {
 			// 실패하면 실패 팝업창 띄우고 목록으로 이동
 			request.setAttribute("msg", "문의 등록 실패");
 			request.setAttribute("url", "/inquiry/list.jsp");
-			request.getRequestDispatcher("/WEB-INF/views/member/service/serviceFailed.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp").forward(request, response);
 		}
 		
 	}

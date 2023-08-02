@@ -1,16 +1,21 @@
 package todayeat.controller;
 
 import java.io.IOException;
+import java.util.*;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import todayeat.model.service.InquiryService;
+import todayeat.model.vo.Inquiry;
+
 /**
  * Servlet implementation class InquiryController
  */
-@WebServlet("/member/inquiryList.do")
+@WebServlet("/inquiry/list.do")
 public class InquiryListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -26,7 +31,10 @@ public class InquiryListController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/member/inquiry.jsp").forward(request, response);
+		InquiryService service = new InquiryService();
+		List<Inquiry> iList = service.selectInquiryList();
+		request.setAttribute("iList", iList);
+		request.getRequestDispatcher("/WEB-INF/views/inquiry/list.jsp").forward(request, response);
 	}
 
 	/**

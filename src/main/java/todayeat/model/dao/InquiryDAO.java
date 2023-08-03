@@ -34,7 +34,7 @@ public class InquiryDAO {
 		Statement stmt = null;
 		List<Inquiry> iList = null;
 		ResultSet rset = null;
-		String query = "";
+		String query = "SELECT * FROM INQUIRY_TBL";
 		
 		try {
 			stmt = conn.createStatement();
@@ -51,7 +51,56 @@ public class InquiryDAO {
 		}
 		return iList;
 	}
-	
+	// 데이터 상세 조회
+	public Inquiry selectOneByNo(Connection conn, int inquiryNo) {
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		Inquiry inquiry = null;
+		String query = "SELECT * FROM INQUIRY_TBL WHERE INQUIRY_NO = ?";
+		
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, inquiryNo);
+			rset = pstmt.executeQuery();
+			// 후처리
+			if(rset.next()) {
+				inquiry = rsetToInquiry(rset);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				rset.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return inquiry;
+	}
+	// 데이터 삭제
+	public int deleteInquiry(Connection conn, int inquiryNo) {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		String query = "DELETE FROM INQUIRY_TBL WHERE INQUIRY_NO = ?";
+		
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, inquiryNo);
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
 	// 후처리
 	private Inquiry rsetToInquiry(ResultSet rset) throws SQLException {
 		Inquiry inquiry = new Inquiry();
@@ -63,6 +112,8 @@ public class InquiryDAO {
 		inquiry.setInquiryYN(rset.getString("INQUIRY_YN"));
 		return inquiry;
 	}
+
+
 
 	
 	

@@ -22,7 +22,7 @@
 	                    <!-- 비밀번호 입력 -->
 	                    <div class="join-info" id="join-pw">
 	                        <span>비밀번호 </span>
-	                        <input class="joinInfo" type="password" name="joinPW" id="joinPw" placeholder="비밀번호를 입력하세요.">
+	                        <input class="joinInfo" type="password" name="joinPW" id="joinPw1" placeholder="비밀번호를 입력하세요.">
 	                    </div>
 	                    <!-- 비밀번호 재입력 -->
 	                    <div class="join-info" id="join-pwRe">

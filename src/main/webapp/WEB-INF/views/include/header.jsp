@@ -42,15 +42,16 @@
 		</nav>
 		<!-- 로그인/회원가입 -->
 		<div id="login">
-		<c:if test="${ memberId eq null }">
+		<c:if test="${ userId eq null }">
 			<a href="/member/login.do">로그인</a>
 			<pre id="Space"> | </pre>
 			<a href="/member/join.do">회원가입</a>
 			</c:if>
-		<c:if test="${ memberId ne null }">
+		<c:if test="${ userId ne null }">
+<!-- 			<small>{sessionScope.userName }님 환영합니다!</small> -->
 			<a href="#">마이페이지</a>
 			<pre id="Space"> | </pre>
-			<a href="#">로그아웃</a>
+			<a href="/member/logout.do?memberId=${memberScope.userId }">로그아웃</a>
 		</c:if>
 		</div>
 	</div>

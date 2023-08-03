@@ -1,5 +1,7 @@
 main {
-    height: 1150px;
+/*     height: 1150px; */
+    height: 500px;
+/*     margin-bottom : 300px; */
 }
 .join {
     width: 600px;
@@ -38,7 +40,7 @@ main {
 .join > div > #joinId {
     margin-left: 45px;
 }
-.join > div > #joinPW {
+.join > div > #joinPw1 {
     margin-left: 30px;
 }
 .join > div > #joinPwRe {

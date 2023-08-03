@@ -45,13 +45,12 @@ public class LoginController extends HttpServlet {
 		String memberpw = request.getParameter("user-pw");
 		Member member = new Member(memberid, memberpw);
 		MemberService service = new MemberService();
-		
 		Member mOne = service.selectLongin(member);
 		if(mOne != null) {
 			// 성공
 			HttpSession session = request.getSession();
-			session.setAttribute("user-id", member.getMemberId());
-			
+			session.setAttribute("userId", mOne.getMemberId());
+			session.setAttribute("userName", mOne.getMemberName());
 			request.setAttribute("msg", "로그인 성공!");
 			request.setAttribute("url", "/index.jsp");
 			request.getRequestDispatcher("/WEB-INF/views/common/serviceSuccess.jsp").forward(request, response);

@@ -35,6 +35,18 @@ main {
     top: 5px;
     left: 740px;
 }
+#inquiryBtn {
+	width: 150px;
+    height: 48px;
+    padding: 0 10px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    background-color: #F8F8F8;
+    font-family: 'LINESeedKR-Bd';
+    position: relative;
+    top: 160px;
+    left: 1250px;
+}
 table {
     border: 2px solid #EAE5C8;
     margin: 50px auto;

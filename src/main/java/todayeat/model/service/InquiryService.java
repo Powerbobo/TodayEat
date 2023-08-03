@@ -30,11 +30,25 @@ public class InquiryService {
 		jdbcTemplate.close(conn);
 		return result;
 	}
-	// 문의글 조회
+	// 전체 문의글
 	public List<Inquiry> selectInquiryList() {
 		Connection conn = jdbcTemplate.createConnection();
 		List<Inquiry> iList = iDao.selectInquiryList(conn);
 		return iList;
+	}
+	// 상세 조회
+	public Inquiry selectOneByNo(int inquiryNo) {
+		Connection conn = jdbcTemplate.createConnection();
+		Inquiry inquiry = iDao.selectOneByNo(conn, inquiryNo);
+		jdbcTemplate.close(conn);
+		return inquiry;
+	}
+	// 문의 삭제
+	public int deleteInquiry(int inquiryNo) {
+		Connection conn = jdbcTemplate.createConnection();
+		int result = iDao.deleteInquiry(conn, inquiryNo);
+		jdbcTemplate.close(conn);
+		return result;
 	}
 	
 	

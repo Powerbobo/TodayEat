@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 	<!-- head -->
-	<jsp:include page="/WEB-INF/views/include/head.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/views/include/head_index.jsp"></jsp:include>
 	<body>
 		<div id="container">
 		<!-- header -->

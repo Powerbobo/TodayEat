@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import todayeat.model.service.InquiryService;
 import todayeat.model.vo.Inquiry;
+import todayeat.model.vo.PageData;
 
 /**
  * Servlet implementation class InquiryController
@@ -32,8 +33,13 @@ public class InquiryListController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		InquiryService service = new InquiryService();
-		List<Inquiry> iList = service.selectInquiryList();
+		String page = request.getParameter("currentPage") != null ? request.getParameter("currentPage") : "1";
+		int currentPage = Integer.parseInt(page);
+//		int currentPage = Integer.parseInt(request.getParameter("currentPage"));
+		PageData pd = service.selectInquiryList(currentPage);
+		List<Inquiry> iList = pd.getiList();
 		request.setAttribute("iList", iList);
+		request.setAttribute("pageNavi", pd.getPageNavi());
 		request.getRequestDispatcher("/WEB-INF/views/inquiry/list.jsp").forward(request, response);
 	}
 

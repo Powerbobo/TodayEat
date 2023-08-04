@@ -29,16 +29,22 @@ public class InquiryDAO {
 		}
 		return result;
 	}
-	// 문의글 조회
-	public List<Inquiry> selectInquiryList(Connection conn) {
-		Statement stmt = null;
-		List<Inquiry> iList = null;
+	// 문의글 전체 조회
+	public List<Inquiry> selectInquiryList(Connection conn, int currentPage) {
+		PreparedStatement pstmt = null;
 		ResultSet rset = null;
-		String query = "SELECT * FROM INQUIRY_TBL";
+		List<Inquiry> iList = null;
+//		String query = "SELECT * FROM INQUIRY_TBL";
+		String query = "SELECT * FROM(SELECT ROW_NUMBER() OVER(ORDER BY INQUIRY_NO DESC) ROW_NUM, INQUIRY_TBL.* FROM INQUIRY_TBL)WHERE ROW_NUM BETWEEN ? AND ?";
+		int recordCountPerPage = 10;
+		int start = currentPage * recordCountPerPage - (recordCountPerPage - 1);
+		int end = currentPage * recordCountPerPage;
 		
 		try {
-			stmt = conn.createStatement();
-			rset = stmt.executeQuery(query);
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			rset = pstmt.executeQuery();
 			iList = new ArrayList<Inquiry>();
 			// 후처리
 			while(rset.next()) {
@@ -48,8 +54,51 @@ public class InquiryDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return iList;
+	}
+	// 페이징 메소드
+	public String generatePageNavi(int currentPage) {
+		int totalCount = 11;			// 전체 게시물 개수
+		int recordCountPerPage = 10;	// 한 페이지당 보여질 게시물의 개수
+		int naviTotalCount = 0;			// 범위의 총 개수
+		if(totalCount % recordCountPerPage > 0) {
+			naviTotalCount = totalCount / recordCountPerPage + 1;
+		} else {
+			naviTotalCount = totalCount / recordCountPerPage;
+		}
+		int naviCountPerPage = 10;	// 한 페이지 범위에 보여질 페이지의 개수
+		int startNavi = ((currentPage - 1) / naviCountPerPage) * naviCountPerPage + 1;
+		int endNavi = startNavi + naviCountPerPage - 1;
+		if(endNavi > naviTotalCount) {
+			endNavi = naviTotalCount;
+		}
+		// 이전/다음 페이지 여부
+		boolean needPrev = true;
+		boolean needNext = true;
+		if(startNavi == 1) {
+			needPrev = false;
+		}
+		if(endNavi == naviTotalCount) {
+			needNext = false;
+		}
+		StringBuilder result = new StringBuilder();
+		if(needPrev) {
+			result.append("<a href='/notice/list.do?currentPage="+(startNavi-1)+"'>[이전]</a> ");
+		}
+		for(int i = startNavi; i<= endNavi; i++) {
+			result.append("<a href='/notice/list.do?currentPage="+i+"'>"+i+"</a>&nbsp;&nbsp;");
+		}
+		if(needNext) {
+			result.append("<a href='/notice/list.do?currentPage="+(endNavi+1)+"'>[다음]</a> ");
+		}
+		return result.toString();
 	}
 	// 데이터 상세 조회
 	public Inquiry selectOneByNo(Connection conn, int inquiryNo) {
@@ -112,6 +161,7 @@ public class InquiryDAO {
 		inquiry.setInquiryYN(rset.getString("INQUIRY_YN"));
 		return inquiry;
 	}
+
 
 
 

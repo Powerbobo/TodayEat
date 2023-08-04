@@ -3,14 +3,14 @@
 <!DOCTYPE html>
 <html lang="ko">
 	<!-- head -->
-	<jsp:include page="/WEB-INF/views/include/head.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/views/include/head_join.jsp"></jsp:include>
     <body>
         <div id="container">
          <!-- header -->
 		<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
-            <main>
+            <main id="join-main">
                 <!-- 회원가입 -->
-                <form action="/member/join.do" method="post">
+                <form action="/member/join.do" method="post" id="join-form">
 	                <div class="join">
 	                    <h2>회원가입</h2>
 	                    <hr>

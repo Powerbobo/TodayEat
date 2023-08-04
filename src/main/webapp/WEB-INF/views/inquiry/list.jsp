@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 	<!-- head -->
-	<jsp:include page="/WEB-INF/views/include/head.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/views/include/head_list.jsp"></jsp:include>
     <body>
         <div id="container">
 	        <!-- header -->
@@ -46,12 +46,16 @@
 			                       				<td class="answer">${ inquiry.inquiryYN }</td>
 			                          		</tr>
 		                          		</c:forEach>
+		                          		<tr>
+		                          			<td colspan="5" align="center">
+		                          			${pageNavi}
+		                          		</tr>
 		                        	</tbody>
 		                        </table>
 		                    </div>
 		                    <!-- 목록 페이지 -->
-		                    <a href="#"><div id="list-footer1"> 1 </div></a>
-		                    <a href="#"><div id="list-footer2"> 2 </div></a>
+<!-- 		                    <a href="#"><div id="list-footer1"> 1 </div></a> -->
+<!-- 		                    <a href="#"><div id="list-footer2"> 2 </div></a> -->
 		                </div>
 		            </form>
 	            </c:if>

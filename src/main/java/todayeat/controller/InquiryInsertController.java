@@ -52,7 +52,7 @@ public class InquiryInsertController extends HttpServlet {
 		} else {
 			// 실패하면 실패 팝업창 띄우고 목록으로 이동
 			request.setAttribute("msg", "문의 등록 실패");
-			request.setAttribute("url", "/inquiry/list.jsp");
+			request.setAttribute("url", "/inquiry/list.do");
 			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp").forward(request, response);
 		}
 		

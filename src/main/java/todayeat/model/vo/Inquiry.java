@@ -22,6 +22,14 @@ public class Inquiry {
 		this.inquiryContent = inquiryContent;
 	}
 	
+	
+	public Inquiry(int inquiryNo, String inquirySubject, String inquiryContent) {
+		super();
+		this.inquiryNo = inquiryNo;
+		this.inquirySubject = inquirySubject;
+		this.inquiryContent = inquiryContent;
+	}
+
 	public Inquiry(String inquirySubject, String inquiryContent, String inquiryWriter) {
 		super();
 		this.inquirySubject = inquirySubject;

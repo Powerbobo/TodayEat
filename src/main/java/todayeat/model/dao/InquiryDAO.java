@@ -129,6 +129,30 @@ public class InquiryDAO {
 		}
 		return inquiry;
 	}
+	// 데이터 수정
+	public int updateInquiry(Connection conn, Inquiry inquiry) {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		String query = "UPDATE INQUIRY_TBL SET INQUIRY_SUBJECT = ?, INQUIRY_CONTENT = ? WHERE INQUIRY_NO = ?";
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, inquiry.getInquirySubject());
+			pstmt.setString(2, inquiry.getInquiryContent());
+			pstmt.setInt(3, inquiry.getInquiryNo());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
 	// 데이터 삭제
 	public int deleteInquiry(Connection conn, int inquiryNo) {
 		PreparedStatement pstmt = null;
@@ -161,6 +185,7 @@ public class InquiryDAO {
 		inquiry.setInquiryYN(rset.getString("INQUIRY_YN"));
 		return inquiry;
 	}
+
 
 
 

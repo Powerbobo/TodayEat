@@ -62,6 +62,18 @@ public class InquiryService {
 		jdbcTemplate.close(conn);
 		return result;
 	}
+	// 문의 수정
+	public int updateInquiry(Inquiry inquiry) {
+		Connection conn = jdbcTemplate.createConnection();
+		int result = iDao.updateInquiry(conn, inquiry);
+		if(result > 0) {
+			jdbcTemplate.commit(conn);
+		} else {
+			jdbcTemplate.rollback(conn);
+		}
+		jdbcTemplate.close(conn);
+		return result;
+	}
 	
 	
 
